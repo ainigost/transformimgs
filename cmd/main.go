@@ -69,7 +69,8 @@ func main() {
 	router.HandleFunc("/health", health.Health)
 
 	img.Log.Printf("Running the application on port $PORT...\n")
-	err = http.ListenAndServe(":$PORT", router)
+	port := ":" + os.Getenv("PORT")
+	err = http.ListenAndServe(port, router)
 
 	if err != nil {
 		img.Log.Errorf("Error while stopping application: %+v", err)
