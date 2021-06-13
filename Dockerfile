@@ -2,7 +2,7 @@ FROM golang:1.15-buster AS build
 
 RUN mkdir -p /go/src/github.com/Pixboost/
 WORKDIR /go/src/github.com/Pixboost/
-RUN git clone https://github.com/Pixboost/transformimgs.git
+RUN git clone https://github.com/ainigost/transformimgs.git
 
 WORKDIR /go/src/github.com/Pixboost/transformimgs/
 RUN go mod vendor
