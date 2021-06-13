@@ -68,8 +68,8 @@ func main() {
 	router := srv.GetRouter()
 	router.HandleFunc("/health", health.Health)
 
-	img.Log.Printf("Running the application on port 8080...\n")
-	err = http.ListenAndServe(":8080", router)
+	img.Log.Printf("Running the application on port $PORT...\n")
+	err = http.ListenAndServe(":$PORT", router)
 
 	if err != nil {
 		img.Log.Errorf("Error while stopping application: %+v", err)
